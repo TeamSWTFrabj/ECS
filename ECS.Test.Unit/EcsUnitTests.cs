@@ -59,7 +59,7 @@ namespace ECS.Test.Unit
             Assert.That(() => { _uut.LowerTemperatureThreshold = _uut.UpperTemperatureThreshold; }, Throws.Nothing);
         }
 
-
+        [Test]
         public void Thresholds_InvalidUpperTemperatureThresholdSet_ArgumentExceptionThrown()
         {
             // Check that it throws when upper is illegal
@@ -67,6 +67,7 @@ namespace ECS.Test.Unit
             Assert.That(() => { _uut.UpperTemperatureThreshold = 24; }, Throws.TypeOf<ArgumentException>());
         }
 
+        [Test]
         public void Thresholds_InvalidLowerTemperatureThresholdSet_ArgumentExceptionThrown()
         {
             // Check that it throws when lower is illegal
