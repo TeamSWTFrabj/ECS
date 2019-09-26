@@ -9,21 +9,18 @@
   <InheritConsole><!-- [True|False] Lets the application being analysed to inherit dotCover console. True by default. --> </InheritConsole>
   
   <!-- Coverage filters. It's possible to use asterisks as wildcard symbols.
+  -->
   <Filters>
     <IncludeFilters>
-      <FilterEntry>
-        <ModuleMask> Module mask. </ModuleMask>
-        <ClassMask> Class mask. </ClassMask>
-        <FunctionMask> Function mask. </FunctionMask>
-      </FilterEntry>
     </IncludeFilters>
     <ExcludeFilters>
-      <FilterEntry>...</FilterEntry>
-      <FilterEntry>...</FilterEntry>
-      <FilterEntry>...</FilterEntry>
+      <FilterEntry>
+        <ModuleMask>nunit.framework</ModuleMask>
+        <ClassMask>*</ClassMask>
+        <FunctionMask>*</FunctionMask>
+      </FilterEntry>
     </ExcludeFilters>
   </Filters>
-  -->
   <!-- Attribute filters. It's possible to use asterisks as wildcard symbols.
   <AttributeFilters>
     <AttributeFilterEntry>...</AttributeFilterEntry>
