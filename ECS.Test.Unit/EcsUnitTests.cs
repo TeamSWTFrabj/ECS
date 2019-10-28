@@ -85,7 +85,7 @@ namespace ECS.Test.Unit
         public void Regulate_TempIsLow_HeaterIsTurnedOn()
         {
             // Setup stub with desired response
-            _fakeTempSensor.GetTemp().Returns(20);
+            _fakeTempSensor.GetTemp().Returns(24);
             // Act
             _uut.Regulate();
 
@@ -98,7 +98,7 @@ namespace ECS.Test.Unit
         public void Regulate_TempIsLow_WindowIsClosed()
         {
             // Setup stub with desired response
-            _fakeTempSensor.GetTemp().Returns(20);
+            _fakeTempSensor.GetTemp().Returns(24);
             // Act
             _uut.Regulate();
 
@@ -138,11 +138,12 @@ namespace ECS.Test.Unit
 
         #region Tlow < T < Thigh
 
-        [Test]
-        public void Regulate_TempIsBetweenLowerAndUpperThresholds_HeaterIsTurnedOff()
+        [TestCase(26)]
+        [TestCase(27)]
+        public void Regulate_TempIsBetweenLowerAndUpperThresholds_HeaterIsTurnedOff(int testTemp)
         {
             // Setup the stub with desired response
-            _fakeTempSensor.GetTemp().Returns(27);
+            _fakeTempSensor.GetTemp().Returns(testTemp);
             _uut.Regulate();
 
             // Assert on the mock - was the heater called correctly
